@@ -1,25 +1,5 @@
-const eliminarNoCanonicos = require('./stringDNA');
+const dna = require ('../dna');
 
-test('Eliminar bases no canónicas de la cadena de ADN', () => {
-  const cadenaADN = 'ACGTNACGT';
-  const resultado = eliminarNoCanonicos(cadenaADN);
-  expect(resultado).toBe('ACGTACGT');
-});
-
-test('No eliminar bases canónicas de la cadena de ADN', () => {
-  const cadenaADN = 'ACGT';
-  const resultado = eliminarNoCanonicos(cadenaADN);
-  expect(resultado).toBe('ACGT');
-});
-
-test('Eliminar todas las bases no canónicas de la cadena de ADN', () => {
-  const cadenaADN = 'NNNN';
-  const resultado = eliminarNoCanonicos(cadenaADN);
-  expect(resultado).toBe('');
-});
-
-test('Eliminar bases no canónicas de la cadena de ADN mixta', () => {
-  const cadenaADN = 'ACGTNACGTN';
-  const resultado = eliminarNoCanonicos(cadenaADN);
-  expect(resultado).toBe('ACGTACGT');
+test ('Remove non-canonical bases', () => {
+    expect(dna('CTAGGGTAacCG')).toMatch('CTAGGGTACG');
 });

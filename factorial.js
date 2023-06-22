@@ -1,9 +1,11 @@
-function factorial(n) {
-    if (n === 0) {
-        return 1;
-       } else {
-        return n * factorial(n - 1);
+function factorial(num) {
+    if (num === 0 || num === 1) {
+      return 1;
     }
-}
+    
+    return num * factorial(num - 1);
+  }
+  
+  console.log(factorial(8));
 
-console.log(factorial(8));
+  module.exports = factorial;

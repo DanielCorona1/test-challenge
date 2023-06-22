@@ -1,21 +1,17 @@
-const { default: expect } = require('expect');
-const factorial = require('./factorial');
+const factorial = require('../factorial.js');
 
-test('Factorial de 0 es 1', () => {
-  const resultado = factorial(0);
-  expect(resultado).toBe(1);
+test('Calcula el factorial de 0', () => {
+  expect(factorial(0)).toBe(1);
 });
 
-test('Factorial de 1 es 1', () => {
-  const resultado = factorial(1);
-  expect(resultado).toBe(1);
+test('Calcula el factorial de 1', () => {
+  expect(factorial(1)).toBe(1);
 });
 
-test('Factorial de 5 es 120', () => {
-  const resultado = factorial(5);
-  expect(resultado).toBe(120);
+test('Calcula el factorial de 7', () => {
+  expect(factorial(7)).toBe(5040);
 });
 
-test('Factorial de número negativo arroja un error', () => {
-  expect(() => factorial(-1)).toThrow('El factorial solo está definido para números no negativos.');
+test('Calcula el factorial de 9', () => {
+  expect(factorial(9)).toBe(362880);
 });

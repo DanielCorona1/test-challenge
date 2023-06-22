@@ -1,21 +1,17 @@
-const fizzBuzz = require('../fizzBuzz');
-
-test('Número divisible por 3 y 5 retorna "FizzBuzz"', () => {
-  const resultado = fizzBuzz(45);
-  expect(resultado).toBe('FizzBuzz');
+const fizzBuzz = require ('../fizzBuzz');
+        
+test('Escribe fizz', () => {
+    expect(fizzBuzz.divide(3)).toMatch('Fizz');
 });
 
-test('Número divisible por 3 retorna "Fizz"', () => {
-  const resultado = fizzBuzz(9);
-  expect(resultado).toBe('Fizz');
+test('Escribe buzz', () => {
+    expect(fizzBuzz.divide(5)).toMatch('Buzz');
 });
 
-test('Número divisible por 5 retorna "Buzz"', () => {
-  const resultado = fizzBuzz(10);
-  expect(resultado).toBe('Buzz');
+test('Escribe works', () => {
+    expect(fizzBuzz.divide(15)).toMatch('FizzBuzz');
 });
 
-test('Número no divisible por 3 ni 5 retorna el número mismo', () => {
-  const resultado = fizzBuzz(7);
-  expect(resultado).toBe(7);
+test('numero no divisible', () => {
+    expect(fizzBuzz.divide(4)).toEqual(4);
 });

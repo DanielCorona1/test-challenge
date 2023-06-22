@@ -1,16 +1,13 @@
-function stringDNA(dna) {
-    let nonCanonicalDNA = [];
-
-    for (let i = 0; i < dna.length; i++) {
-        if (
-            nonCanonicalDNA.join("").search(dna.charAt(i)) == -1 &&
-            dna.charAt(i) === dna.charAt(i).toUpperCase()
-        ) {
-            nonCanonicalDNA.push(dna.charAt(i));
-        }
+function dna(dnaString) {
+    const canonicalBases = ['C', 'T', 'A', 'G'];
+    let filteredString = '';
+  
+    for (let i = 0; i < dnaString.length; i++) {
+      const base = dnaString[i];
+      if (canonicalBases.includes(base.toUpperCase())) {
+        filteredString += base;
+      }
     }
-
-    return nonCanonicalDNA.join('');
-}
-
-module.exports = stringDNA;
+    return filteredString;
+  }
+  module.exports = dna;
